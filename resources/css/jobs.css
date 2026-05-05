@@ -1,0 +1,31 @@
+.stats-row { grid-template-columns: repeat(4,1fr); }
+    .stat-card:nth-child(1){ --card-accent: var(--blue); }
+    .stat-card:nth-child(2){ --card-accent: var(--accent); }
+    .stat-card:nth-child(3){ --card-accent: var(--green); }
+    .stat-card:nth-child(4){ --card-accent: var(--purple); }
+
+    .progress-wrap { background: var(--surface3); border-radius: 99px; height: 5px; width: 80px; overflow:hidden; display:inline-block; vertical-align:middle; margin-left:8px; }
+    .progress-fill { height:100%; border-radius:99px; background: var(--accent); }
+
+    .view-tabs { display:flex; gap:4px; background:var(--surface2); border-radius:8px; padding:3px; }
+    .view-tab  { padding:5px 12px; border-radius:6px; font-size:12px; font-weight:500; cursor:pointer; color:var(--muted); border:none; background:none; font-family:'DM Sans',sans-serif; transition:all .15s; }
+    .view-tab.active { background:var(--surface); color:var(--text); }
+
+    /* Kanban */
+    .kanban { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:4px; }
+    .kanban-col { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+    .kanban-header { padding:13px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .kanban-col-title { font-size:12px; font-weight:600; display:flex; align-items:center; gap:7px; }
+    .k-dot { width:8px;height:8px;border-radius:50%; }
+    .kanban-count { font-size:11px; color:var(--muted); background:var(--surface2); padding:2px 7px; border-radius:20px; }
+    .kanban-cards { padding:10px; display:flex; flex-direction:column; gap:8px; min-height:100px; }
+    .k-card {
+      background:var(--surface2); border:1px solid var(--border); border-radius:9px; padding:13px;
+      cursor:pointer; transition: border-color .15s, transform .15s;
+    }
+    .k-card:hover { border-color:var(--border2); transform:translateY(-1px); }
+    .k-card-title { font-size:13px; font-weight:500; margin-bottom:5px; }
+    .k-card-sub { font-size:11px; color:var(--muted); margin-bottom:8px; }
+    .k-card-footer { display:flex; justify-content:space-between; align-items:center; }
+    .k-assignee { font-size:11px; color:var(--text2); display:flex;align-items:center;gap:5px; }
+    .k-mini-avatar { width:18px;height:18px;border-radius:50%;font-size:9px;font-weight:600;display:flex;align-items:center;justify-content:center; }

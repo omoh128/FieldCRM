@@ -1,0 +1,12 @@
+.stats-row { grid-template-columns: repeat(4, 1fr); }
+.stat-card:nth-child(1) { --card-accent: var(--blue); }
+.stat-card:nth-child(2) { --card-accent: var(--accent); }
+.stat-card:nth-child(3) { --card-accent: var(--green); }
+.stat-card:nth-child(4) { --card-accent: var(--red); }
+
+.priority-dot {
+  width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px;
+}
+.priority-high   { background: var(--red); }
+.priority-medium { background: var(--accent); }
+.priority-low    { background: var(--green); }
