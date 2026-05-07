@@ -259,7 +259,7 @@ php artisan optimize:clear
 | :---: | :---: |
 | ![Dashboard](./screenshots/dashboard.png) | ![Leads List](./screenshots/leads-list.png) |
 
-| Kanban Job Board | Customer Profiles |
+| Kanban Job Board | Front Page] |
 | :---: | :---: |
 | ![Kanban](./screenshots/kanban-view.png) | ![Front Page](./screenshots/front-page.png) |
 
