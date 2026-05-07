@@ -261,6 +261,6 @@ php artisan optimize:clear
 
 | Kanban Job Board | Customer Profiles |
 | :---: | :---: |
-| ![Kanban](./screenshots/kanban-view.png) | 
+| ![Kanban](./screenshots/kanban-view.png) | ![Front Page](./screenshots/front-page.png) |
 
 ---
