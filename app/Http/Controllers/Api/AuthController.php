@@ -15,6 +15,38 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     /**
+     * List all users with the 'owner' role.
+     */
+    public function listOwners(): JsonResponse
+    {
+        $owners = User::where('role', 'owner')->get();
+        return response()->json($owners);
+    }
+
+    /**
+     * Create a new owner.
+     */
+    public function createOwner(RegisterRequest $request): JsonResponse
+    {
+        // Reusing your register logic to ensure consistency
+        return $this->register($request);
+    }
+
+    /**
+     * Delete an owner.
+     */
+    public function deleteOwner(User $owner): JsonResponse
+    {
+        // Prevent an owner from deleting themselves
+        if (Auth::id() === $owner->id) {
+            return response()->json(['message' => 'You cannot delete your own account.'], 403);
+        }
+
+        $owner->delete();
+        return response()->json(['message' => 'Owner deleted successfully.']);
+    }
+
+    /**
      * Register a new user and return a token.
      */
     public function register(RegisterRequest $request): JsonResponse
@@ -25,7 +57,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'company'  => $request->company,
             'phone'    => $request->phone,
-            'role'     => 'owner', // first user is always owner
+            'role'     => 'owner',
         ]);
 
         $token = $user->createToken('fieldcrm')->plainTextToken;

@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 // ── Public ────────────────────────────────────────────────────────────────────
 Route::post('/auth/login', [AuthController::class, 'login']);
 
+Route::post('/auth/register', [AuthController::class, 'register']);
+
 // Stripe webhook — must be outside auth middleware (Stripe signs it differently)
 Route::post('/stripe/webhook', [InvoiceController::class, 'stripeWebhook']);
 
